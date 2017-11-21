@@ -9,14 +9,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
     <link href="animate.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Quote Generator</title>
 </head>
 
 <body>
     <div class="container-fluid text-center bg-1">
         <h1>Welcome to the Quote-O-Matic</h1>
-        <div class="jumbotron" id="quoteDisplay">
-            <p class="bounceInDown" id="quote"></p>
+        <div class="jumbotron" id="quoteDisplay" onload="animate()">
+            <p class="animated bounceInDown" id="quote"></p>
         </div>
         <div class="text-center">
             <button id="button" onclick="getQuote()">Get a Quote</button>
@@ -24,13 +25,13 @@
                 <p>Like what you see? <br> Share it on social media:</p>
                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpreview.c9users.io%2Flrgeorge27%2Ffirstworkspace%2Fquote_generator%2Findex.html%3F_c9_id%3Dlivepreview1%26_c9_host%3Dhttps%3A%2F%2Fide.c9.io&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId"
                     width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-                <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
+                <button id="twitterBtn" onclick="tweet()" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+                <!--<a href=" https://www.pinterest.com/pin/create/button/ " data-pin-do="buttonBookmark " image src="Quote-O-Matic "></a>-->
             </div>
         </div>
     </div>
 
-    <!-- <div id="fb-root"></div>
+    <!-- <div id="fb-root "></div>
     <script>
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -40,12 +41,20 @@
             js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>-->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8 "></script>-->
+    <script type="text/javascript " async defer src="//assets.pinterest.com/js/pinit.js "></script>
+    <script type="text/javascript " src="script.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js " integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=" anonymous "></script>
+    <script>
+        $(document).ready(function() {
+            $('#button').each(function() {
+                animationOnClick(this, 'bounceInDown');
+            });
+        });
+    </script>
 </body>
 
 </html>

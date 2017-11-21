@@ -8,7 +8,25 @@ var quotes = [
 
 function getQuote() {
     var number = Math.floor(Math.random() * (quotes.length));
-    document.getElementById("quote").innerHTML = quotes[number];
+    var share = document.getElementById("quote").innerHTML = quotes[number];
 }
-console.log(Math.floor(Math.random() * 3));
+//console.log(Math.floor(Math.random() * 3));
 console.log(getQuote());
+
+function tweet() {
+    var share = document.getElementById("quote").innerText;
+    var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(share) + "&url=&original_referer=";
+    window.open(url);
+    console.log(share);
+}
+
+function animationClick(element, animation) {
+    element = $(button);
+    element.click(
+        function() {
+            element.addClass('animated' + 'bounceInDown');
+            window.setTimeout(function() {
+                element.removeClass('animated' + 'bounceInDown');
+            }, 2000);
+        });
+}
